@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="library"></div>
+    </div>
+    <dialog>
+        <form action="" >
+            <p> 
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title">
+            </p>
+
+            <p> 
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author">
+            </p>
+            <p> 
+                <label for="pages">Pages:</label>
+                <input type="text" name="pages" id="pages">
+            </p>
+
+            <p> 
+                <label for="read">Have Read?</label>
+                <input type="text" name="have" id="read">
+            </p>
+            <div>
+                <button type="Submit" id="sub">Submit</button>
+                <!-- form method dialog allows us to cancel right away -->
+                <button value="cancel" id="cancel" formmethod="dialog">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
