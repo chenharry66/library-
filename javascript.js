@@ -3,17 +3,18 @@ const myLibrary = []
 const container = document.querySelector(".container");
 const libWindow = document.querySelector(".library");
 
-function Book(title, author, pages, haveRead) {
-    if (!new.target) {
-        throw Error('You must use the new keyword');
+
+class Book {
+    constructor(title, author, pages, haveRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead;
+        this.id = crypto.randomUUID();
     }
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead;
 
     // name the funciton use this. but when you call still function syntax
-    this.info = function() { 
+    info = () => { 
         var hasReadStr = "not read yet"; 
         if (this.haveRead) {
             hasReadStr = "read";
@@ -21,10 +22,7 @@ function Book(title, author, pages, haveRead) {
         const str = `${this.title} by ${this.author}, ${this.pages}, ${hasReadStr}.`
         return str;
     }
-
-    this.id = crypto.randomUUID();
 }
-
 
 function addBookToLibrary(title, author, pages, haveRead) {
     const newBook = new Book(title, author, pages, haveRead);
